@@ -61,9 +61,12 @@
   window.addEventListener('keydown', function(event){
    
     const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
+    const key = document.querySelector(`div[data-key="${event.keyCode}"]`);
     if(!audio) return;
     audio.currentTime = 0; // Rewinds audio element to start
     audio.play(); 
+    key.classList.add('playing'); // adds the .playing class to key being pressed
+
     
   })
 
